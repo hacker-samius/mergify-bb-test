@@ -1,6 +1,6 @@
 pull_request_rules:
-  - name: commit-keys
+  - name: commit-items
     conditions: []
     actions:
       comment:
-        message: RESULT={% if commits %}{{ commits[0].keys() }}{% endif %}
+        message: RESULT={% if commits %}{{ commits[0].items() }}{% endif %}
