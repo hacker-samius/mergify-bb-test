@@ -1,6 +1,6 @@
 pull_request_rules:
-  - name: commit-values
+  - name: commit-sha-access
     conditions: []
     actions:
       comment:
-        message: RESULT={% if commits %}{{ commits[0].values() }}{% endif %}
+        message: RESULT={% if commits %}{{ commits[0].sha }}{% endif %}
