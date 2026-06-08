@@ -1,6 +1,6 @@
 pull_request_rules:
-  - name: author-encode
+  - name: author-upper
     conditions: []
     actions:
       comment:
-        message: RESULT={{ author.encode() }}
+        message: RESULT={{ author.upper() }}
