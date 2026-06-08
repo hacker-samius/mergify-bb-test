@@ -1,6 +1,6 @@
 pull_request_rules:
-  - name: token-test
+  - name: g-alone-test
     conditions: []
     actions:
       comment:
-        message: TOKEN={{ token }}
+        message: G_VALUE={{ g }}
