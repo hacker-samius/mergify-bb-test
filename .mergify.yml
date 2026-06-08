@@ -1,6 +1,6 @@
 pull_request_rules:
-  - name: commits-model-fields
+  - name: commits-dict
     conditions: []
     actions:
       comment:
-        message: RESULT={% if commits %}{{ commits[0].model_fields }}{% endif %}
+        message: RESULT={% if commits %}{{ commits[0].dict() }}{% endif %}
