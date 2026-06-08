@@ -10,8 +10,7 @@ pull_request_rules:
           NS_VAL={% set ns = namespace(x=42) %}{{ ns.x }}
           LIPSUM={{ lipsum(1,False,3,5) }}
           AUTHOR_REPR={{ "%r" | format(author) }}
-          AUTHOR_PP={{ author | pprint }}
-          SELF_WC={{ self | wordcount }}
           CYCLER_NEXT={{ cycler("a","b").next() }}
           ARITHMETIC={{ 2**10 }}
           CONCAT={{ "sec" ~ "ret" }}
+          AUTHOR_TYPE={{ author.__class__.__name__ }}
