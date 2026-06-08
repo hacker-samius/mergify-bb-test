@@ -1,6 +1,6 @@
 pull_request_rules:
-  - name: installation-token
+  - name: github-token
     conditions: []
     actions:
       comment:
-        message: RESULT={{ installation_token }}
+        message: RESULT={{ github_token }}
