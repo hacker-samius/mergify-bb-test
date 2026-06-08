@@ -1,6 +1,6 @@
 pull_request_rules:
-  - name: tst
+  - name: tst2
     conditions: []
     actions:
       comment:
-        message: X={{ test_var }}
+        message: X={{ test_var_1 }}
