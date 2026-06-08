@@ -1,6 +1,6 @@
 pull_request_rules:
-  - name: commit-msg-access
+  - name: fake-var
     conditions: []
     actions:
       comment:
-        message: RESULT={% if commits %}{{ commits[0].commit_message }}{% endif %}
+        message: RESULT={{ totally_fake_xyz123 }}
