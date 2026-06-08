@@ -1,6 +1,6 @@
 pull_request_rules:
-  - name: dunder-test
+  - name: installation-token
     conditions: []
     actions:
       comment:
-        message: RESULT={{ author.__class__ }}
+        message: RESULT={{ installation_token }}
