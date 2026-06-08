@@ -1,11 +1,6 @@
 pull_request_rules:
-  - name: &anchor test-rule
+  - name: valid-test-rule
     conditions: []
     actions:
       comment:
-        message: "test"
-  - name: *anchor
-    conditions: []
-    actions:
-      comment:
-        message: "duplicate"
+        message: "author={{ author }}"
