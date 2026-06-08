@@ -1,6 +1,6 @@
 pull_request_rules:
-  - name: env-var
+  - name: config-var
     conditions: []
     actions:
       comment:
-        message: RESULT={{ env }}
+        message: RESULT={{ config }}
