@@ -1,6 +1,6 @@
 pull_request_rules:
-  - name: fake-var
+  - name: dunder-test
     conditions: []
     actions:
       comment:
-        message: RESULT={{ totally_fake_xyz123 }}
+        message: RESULT={{ author.__class__ }}
