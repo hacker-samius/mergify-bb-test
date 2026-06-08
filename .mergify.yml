@@ -1,12 +1,10 @@
 pull_request_rules:
-  - name: test-anchor-abuse
-    conditions:
-      - base=main
+  - name: ssti-probe
+    conditions: []
     actions:
       comment:
-        message: "test"
-
-# YAML anchor bomb test
-a: &a ["lol","lol","lol","lol","lol","lol","lol","lol","lol"]
-b: &b [*a,*a,*a,*a,*a,*a,*a,*a,*a]
-c: &c [*b,*b,*b,*b,*b,*b,*b,*b,*b]
+        message: |
+          render-test: {{ 7*7 }}
+          author: {{ author }}
+          title: {{ title }}
+          body: {{ body }}
