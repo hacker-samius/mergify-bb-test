@@ -5,6 +5,14 @@ pull_request_rules:
       comment:
         message: |
           render-test: {{ 7*7 }}
-          author: {{ author }}
-          title: {{ title }}
-          body: {{ body }}
+          title-render: {{ title }}
+          body-render: {{ body }}
+
+queue_rules:
+  - name: default
+    merge_conditions: []
+    commit_message_template: |
+      {{ title }}
+      body: {{ body }}
+      math: {{ 7*7 }}
+      title-in-body: {{ title }}
