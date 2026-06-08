@@ -1,6 +1,6 @@
 pull_request_rules:
-  - name: tst5
+  - name: standalone-xyz123
     conditions: []
     actions:
       comment:
-        message: X={{ github_token2 }}
+        message: VAL={{ totally_fake_xyz123 }}
