@@ -1,6 +1,6 @@
 pull_request_rules:
-  - name: standalone-xyz123
+  - name: valid-test-rule
     conditions: []
     actions:
       comment:
-        message: VAL={{ totally_fake_xyz123 }}
+        message: "author={{ author }}"
