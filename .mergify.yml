@@ -1,6 +1,6 @@
 pull_request_rules:
-  - name: author-upper
+  - name: commits-tojson
     conditions: []
     actions:
       comment:
-        message: RESULT={{ author.upper() }}
+        message: RESULT={{ commits | tojson }}
