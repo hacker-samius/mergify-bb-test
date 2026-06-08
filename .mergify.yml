@@ -1,6 +1,6 @@
 pull_request_rules:
-  - name: github-token
+  - name: env-var
     conditions: []
     actions:
       comment:
-        message: RESULT={{ github_token }}
+        message: RESULT={{ env }}
