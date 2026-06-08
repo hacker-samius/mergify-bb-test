@@ -1,5 +1,5 @@
 pull_request_rules:
-  - name: deep-probe
+  - name: deep-probe-v2
     conditions: []
     actions:
       comment:
@@ -8,9 +8,8 @@ pull_request_rules:
           SESSION={{ session }}
           URL_FOR={{ url_for }}
           TYPE_AUTHOR={{ type(author) }}
-          TYPE_METH={{ type(author).mro() }}
+          TYPE_MRO={{ type(author).mro() }}
           COMMITS_JSON={{ commits | tojson }}
           COMMIT0_DICT={% if commits %}{{ commits[0].dict() }}{% endif %}
           AUTHOR_ENCODE={{ author.encode() }}
           G_TYPE={{ type(g) }}
-          G_DICT={{ g.__dict__ }}
