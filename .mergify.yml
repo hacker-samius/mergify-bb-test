@@ -1,15 +1,8 @@
 pull_request_rules:
-  - name: runtime-probe
+  - name: include-probe
     conditions: []
     actions:
       comment:
         message: |
-          SELF={{ self }}
-          JOINER_SEP={% set j = joiner("/") %}{{ j.sep }}
-          CYCLER_ITEMS={{ cycler("a","b","c").items }}
-          NS_VAL={% set ns = namespace(x=42) %}{{ ns.x }}
-          LIPSUM={{ lipsum(1,False,3,5) }}
-          AUTHOR_REPR={{ "%r" | format(author) }}
-          CYCLER_NEXT={{ cycler("a","b").next() }}
-          ARITHMETIC={{ 2**10 }}
-          CONCAT={{ "sec" ~ "ret" }}
+          {% include 'CANARY_NONEXISTENT_TEMPLATE_XYZ123' %}
+          POST_INCLUDE
