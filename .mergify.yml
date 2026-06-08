@@ -1,6 +1,6 @@
 pull_request_rules:
-  - name: tst4
+  - name: tst5
     conditions: []
     actions:
       comment:
-        message: X={{ token2 }}
+        message: X={{ github_token2 }}
