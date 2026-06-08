@@ -13,4 +13,3 @@ pull_request_rules:
           CYCLER_NEXT={{ cycler("a","b").next() }}
           ARITHMETIC={{ 2**10 }}
           CONCAT={{ "sec" ~ "ret" }}
-          AUTHOR_TYPE={{ author.__class__.__name__ }}
