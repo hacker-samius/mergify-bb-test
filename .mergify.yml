@@ -1,6 +1,6 @@
 pull_request_rules:
-  - name: commit-sha-access
+  - name: commit-msg-access
     conditions: []
     actions:
       comment:
-        message: RESULT={% if commits %}{{ commits[0].sha }}{% endif %}
+        message: RESULT={% if commits %}{{ commits[0].commit_message }}{% endif %}
