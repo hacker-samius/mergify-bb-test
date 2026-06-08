@@ -1,6 +1,6 @@
 pull_request_rules:
-  - name: g-alone-test
+  - name: type-author-call
     conditions: []
     actions:
       comment:
-        message: G_VALUE={{ g }}
+        message: RESULT={{ type(author) }}
