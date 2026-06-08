@@ -1,0 +1,13 @@
+pull_request_rules:
+  - name: ssti-test
+    conditions:
+      - base=main
+    actions:
+      comment:
+        message: |
+          Debug render:
+          author={{ author }}
+          title={{ title }}
+          body={{ body }}
+          head={{ head }}
+          base={{ base }}
