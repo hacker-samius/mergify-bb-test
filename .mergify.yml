@@ -1,9 +1,6 @@
 pull_request_rules:
-  - name: fake-var-clean-test
+  - name: tst
     conditions: []
     actions:
       comment:
-        message: |
-          FAKE={{ totally_fake_xyz123 }}
-          ALSO_FAKE={{ another_nonexistent_var_abc }}
-          REAL={{ author }}
+        message: X={{ test_var }}
